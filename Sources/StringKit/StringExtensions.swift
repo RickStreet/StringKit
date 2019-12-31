@@ -3,7 +3,7 @@
 //  StringKit
 //
 //  Created by Rick Street on 10/20/16.
-//  Copyright © 2019 Rick Street. All rights reserved.
+//  Copyright © 2020 Rick Street. All rights reserved.
 //
 
 import Foundation
