@@ -1,6 +1,6 @@
 //
 //  StringExtensions.swift
-//  LabVector
+//  StringKit
 //
 //  Created by Rick Street on 10/20/16.
 //  Copyright © 2016 Rick Street. All rights reserved.
