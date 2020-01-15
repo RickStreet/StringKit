@@ -289,15 +289,13 @@ public extension String {
      returns:    String before "-" if present or before "." if present or self
      */
     func fileBaseNoVersion() -> String{
-        var base: String
-        var ext: String
         if let i = self.indexBefore("-") {
             // return file.substring(to: i)
-            return String(file[...i])
+            return String(self[...i])
         }
         if let i = self.indexBefore(".") {
             // return file.substring(to: i)
-            return String(file[...i])
+            return String(self[...i])
         }
         return self
     }
