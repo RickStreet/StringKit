@@ -1,3 +1,3 @@
 # StringKit
 
-A description of this package.
+This package contains an extension to String for convience functions and methods

@@ -272,13 +272,36 @@ public extension String {
         return padding + self
     }
     
-    /// Returns base of file name
+    /**
+     Returns base of file name from path
+     returns:    String before "."
+     */
     func fileBase() -> String? {
         if let index = self.lastIndexOf(".") {
             return String(self[..<index.advance(by: -1, for: self)])
         }
         return nil
     }
+    
+    
+    /**
+     Returns base of file name from path with no -nnm version
+     returns:    String before "-" if present or before "." if present or self
+     */
+    func fileBaseNoVersion() -> String{
+        var base: String
+        var ext: String
+        if let i = self.indexBefore("-") {
+            // return file.substring(to: i)
+            return String(file[...i])
+        }
+        if let i = self.indexBefore(".") {
+            // return file.substring(to: i)
+            return String(file[...i])
+        }
+        return self
+    }
+
     
     /// Returns file extension
     func fileExtension() -> String? {
