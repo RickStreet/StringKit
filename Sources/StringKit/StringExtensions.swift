@@ -412,26 +412,26 @@ public extension String {
     
 }
 
-extension String.Index{
+public extension String.Index{
     
     /**
      Next Index in a Range
      */
-    func successor(in string:String)->String.Index{
+    public func successor(in string:String)->String.Index{
         return string.index(after: self)
     }
     
     /**
      Previous Index in a Range
      */
-    func predecessor(in string:String)->String.Index{
+    public func predecessor(in string:String)->String.Index{
         return string.index(before: self)
     }
     
     /**
      Advance index by a number
      */
-    func advance(by offset: Int, for string: String) -> String.Index {
+    public func advance(by offset: Int, for string: String) -> String.Index {
         return string.index(self, offsetBy: offset)
     }
 }
