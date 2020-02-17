@@ -338,7 +338,7 @@ public extension String {
      Double value for a string
      */
     var doubleValue: Double? {
-        return Double(self.filter("-0123456789.".contains))
+        return Double(self.filter("-+0123456789.eE".contains))
         // return Double(self.trim())
     }
     
