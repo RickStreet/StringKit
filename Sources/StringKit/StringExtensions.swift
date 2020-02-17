@@ -272,6 +272,12 @@ public extension String {
         return padding + self
     }
     
+    func padding(leftTo paddedLength:Int, withPad pad:String=" ", startingAt padStart:Int=0) -> String
+    {
+       let rightPadded = self.padding(toLength:max(count,paddedLength), withPad:pad, startingAt:padStart)
+       return "".padding(toLength:paddedLength, withPad:rightPadded, startingAt:count % paddedLength)
+
+    
     /**
      Returns base of file name from path
      returns:    String before "."
@@ -333,7 +339,8 @@ public extension String {
      Double value for a string
      */
     var doubleValue: Double? {
-        return Double(self.trim())
+        return Double(self.filter("-0123456789.".contains))
+        // return Double(self.trim())
     }
     
     /**
