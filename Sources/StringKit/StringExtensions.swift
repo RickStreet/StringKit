@@ -272,11 +272,10 @@ public extension String {
         return padding + self
     }
     
-    func padding(leftTo paddedLength:Int, withPad pad:String=" ", startingAt padStart:Int=0) -> String
-    {
+    func padding(leftTo paddedLength:Int, withPad pad:String=" ", startingAt padStart:Int=0) -> String {
        let rightPadded = self.padding(toLength:max(count,paddedLength), withPad:pad, startingAt:padStart)
        return "".padding(toLength:paddedLength, withPad:rightPadded, startingAt:count % paddedLength)
-
+    }
     
     /**
      Returns base of file name from path
@@ -398,7 +397,7 @@ public extension String {
     /**
      Array of vowels
      */
-    private var vowels: [String]
+    var vowels: [String]
         {
         get
         {
@@ -409,7 +408,7 @@ public extension String {
     /**
      Array of consonants
      */
-    private var consonants: [String]
+    var consonants: [String]
         {
         get
         {
@@ -424,21 +423,21 @@ public extension String.Index{
     /**
      Next Index in a Range
      */
-    public func successor(in string:String)->String.Index{
+    func successor(in string:String)->String.Index{
         return string.index(after: self)
     }
     
     /**
      Previous Index in a Range
      */
-    public func predecessor(in string:String)->String.Index{
+    func predecessor(in string:String)->String.Index{
         return string.index(before: self)
     }
     
     /**
      Advance index by a number
      */
-    public func advance(by offset: Int, for string: String) -> String.Index {
+    func advance(by offset: Int, for string: String) -> String.Index {
         return string.index(self, offsetBy: offset)
     }
 }
