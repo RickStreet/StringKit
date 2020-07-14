@@ -208,12 +208,12 @@ public extension String {
      - returns:  substring starting at i through the rest of the string
      */
     func left(_ i: Int) -> String {
-        if i < self.count {
+        if i <= self.count {
             let end = self.index(self.startIndex, offsetBy: i)
 
             return String(self[..<end])
         } else {
-            return ""
+            return self
         }
         
     }
