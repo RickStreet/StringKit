@@ -333,6 +333,9 @@ public extension String {
         return self.padding(toLength: toLength, withPad: " ", startingAt: 0)
     }
 
+    var numbersStripped: String {
+        self.filter("_abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ".contains)
+    }
     
     /**
      Double value for a string
@@ -412,7 +415,8 @@ public extension String {
         {
         get
         {
-            return ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z"]
+            return ["a", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z",
+                    "A", "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z"]
         }
     }
     
