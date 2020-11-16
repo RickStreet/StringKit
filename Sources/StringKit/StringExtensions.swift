@@ -257,6 +257,13 @@ public extension String {
         return self.trimmingCharacters(in: NSCharacterSet.punctuationCharacters)
     }
     
+    /// Removes singe and double quotes from string
+    /// - Returns: stipped string
+    func trimQuotes() -> String {
+        return self.trimmingCharacters(in: CharacterSet(charactersIn: "\"\'"))
+    }
+
+    
     /**
      Pads the string from the left
      - parameters:
