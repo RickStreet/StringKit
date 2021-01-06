@@ -118,7 +118,15 @@ public extension String {
     {
         return self.replacingOccurrences(of: of, with: with)
     }
-     
+ 
+    
+    /// Cleans Contract Label (Address Book)
+    /// - Returns: String stripped of "_$!<"  and ">!$_"
+    func contactLabel() -> String {
+        let label = self.replacingOccurrences(of: "_$!<", with: "")
+        return label.replacingOccurrences(of: ">!$_", with: "")
+    }
+
     /**
      Gives String from index <Int>
      
