@@ -353,7 +353,7 @@ public extension String {
     }
     
     var phoneNmberStripped: String {
-        self.filter("_abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ.()- ".contains)
+        self.filter("+0123456789".contains)
     }
 
     
