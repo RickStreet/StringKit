@@ -352,6 +352,11 @@ public extension String {
         self.filter("_abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ".contains)
     }
     
+    var phoneNmberStripped: String {
+        self.filter("_abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ.()- ".contains)
+    }
+
+    
     /**
      Double value for a string
      */
