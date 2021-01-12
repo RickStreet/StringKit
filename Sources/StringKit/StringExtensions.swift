@@ -227,11 +227,11 @@ public extension String {
     }
 
     /**
-     Returns substring for Int range
+     Returns substring for integer range
      - Parameters:
-        - with: intiger range
+        - with: interger range
      
-     - returns:  substring with int range
+     - returns:  string with integer  range
      */
     func substring(with: Range<Int>) -> String {
         let start = self.index(self.startIndex, offsetBy: with.lowerBound)
@@ -239,6 +239,20 @@ public extension String {
         // return self.substring(with: start..<end)
         return String(self[start ..< end])
     }
+    
+    /// Returns substring for Int range
+    /// - Parameter with: integer range
+    /// - Returns: String? with integer range
+    func substringOptional(with: Range<Int>) -> String? {
+        if self.isEmpty || with.lowerBound < 0 || with.upperBound > self.count {
+            return nil
+        }
+        let start = self.index(self.startIndex, offsetBy: with.lowerBound)
+        let end = self.index(self.startIndex, offsetBy: with.upperBound)
+        // return self.substring(with: start..<end)
+        return String(self[start ..< end])
+    }
+
     
     
     /**
@@ -352,9 +366,98 @@ public extension String {
         self.filter("_abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ".contains)
     }
     
-    var phoneNmberStripped: String {
-        self.filter("+0123456789".contains)
+    var phoneNumbersOnly: String {
+        self.filter("0123456789".contains)
     }
+    
+    var phoneNumberFormatted: String? {
+        // check if international
+        if self.count < 6 {
+            return nil
+        }
+        if self.left(3) == "011" {
+            return self
+        }
+        
+        if self.left(1) == "+" {
+            // Has country code
+            let components = self.components(separatedBy: " ")
+            print(components)
+        }
+
+        
+        // Remove any character that is not a number
+        // let numbersOnly = sourcePhoneNumber.components(separatedBy: CharacterSet.decimalDigits.inverted).joined()
+        let numbersOnly = self.phoneNumbersOnly
+        let length = numbersOnly.count
+        let hasLeadingOne = numbersOnly.hasPrefix("1")
+
+        if self.left(1) == "+" {
+            // Has country code
+            if self.contains(target: " ") {
+                let components = self.components(separatedBy: " ")
+                if components[0] != "+1" {
+                    return self
+                }
+            }
+            if self.contains(target: ".") {
+                let components = self.components(separatedBy: ".")
+                if components[0] != "+1" {
+                    return self
+                }
+            }
+            
+            if self.contains(target: "-") {
+                let components = self.components(separatedBy: "-")
+                if components[0] != "+1" {
+                    return self
+                }
+            }
+        }
+
+        let hasAreaCode = (length >= 10)
+        var sourceIndex = 0
+
+        // Leading 1
+        var leadingOne = ""
+        if hasLeadingOne {
+            leadingOne = "1 "
+            sourceIndex += 1
+        }
+
+        // Area code
+        var areaCode = ""
+        if hasAreaCode {
+            let areaCodeLength = 3
+            let testAreaCode = numbersOnly.substringOptional(with: sourceIndex ..< sourceIndex + areaCodeLength)
+            print("area code \(testAreaCode ?? "")")
+            guard let areaCodeSubstring = numbersOnly.substringOptional(with: sourceIndex..<areaCodeLength) else {
+                return nil
+            }
+            areaCode = String(format: "(%@) ", areaCodeSubstring)
+            sourceIndex += areaCodeLength
+        }
+
+        // Prefix, 3 characters
+        let prefixLength = 3
+        let testPrefix = numbersOnly.substringOptional(with: sourceIndex ..< sourceIndex + prefixLength)
+        print("prefix \(testPrefix ?? "")")
+        guard let prefix = numbersOnly.substringOptional(with: sourceIndex ..< sourceIndex + prefixLength) else {
+            return nil
+        }
+        sourceIndex += prefixLength
+
+        // Suffix, 4 characters
+        let suffixLength = 4
+        let testsuffix = numbersOnly.substringOptional(with: sourceIndex ..< sourceIndex + suffixLength)
+        print("suffix \(testsuffix ?? "")")
+        guard let suffix = numbersOnly.substringOptional(with: sourceIndex ..< sourceIndex + suffixLength) else {
+            return nil
+        }
+        return leadingOne + areaCode + prefix + "-" + suffix
+    }
+    
+
 
     
     /**
