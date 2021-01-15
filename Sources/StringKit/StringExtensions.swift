@@ -87,10 +87,10 @@ public extension String {
      */
     func reverseIndexOf(_ target: String) -> String.Index?
     {
-        let index = self.range(of: target, options:NSString.CompareOptions.backwards)?.upperBound.advance(by: -1, for: self)
+        let index = self.range(of: target, options:NSString.CompareOptions.backwards)?.upperBound
         return index
     }
-    
+
     /**
      Determines ending index of a string in another string
      
@@ -311,12 +311,12 @@ public extension String {
      returns:    String before "."
      */
     func fileBase() -> String? {
-        if let index = self.lastIndexOf(".") {
+        if let index = self.reverseIndexOf(".") {
             return String(self[..<index.advance(by: -1, for: self)])
         }
         return nil
     }
-    
+
     
     /**
      Returns base of file name from path with no -nnm version
@@ -324,24 +324,12 @@ public extension String {
      */
     func fileBaseNoVersion() -> String {
         if let base = self.fileBase() {
-            if let index = base.lastIndexOf("-") {
-                return String(base[..<index.advance(by: -1, for: base)])
+            if let index = base.reverseIndexOf("-") {
+                return String(base[...index.advance(by: -2, for: base)])
             } else {
                 return base
             }
         }
-        
-        
-        /*
-        if let i = self.indexBefore("-") {
-            // return file.substring(to: i)
-            return String(self[...i])
-        }
-        if let i = self.indexBefore(".") {
-            // return file.substring(to: i)
-            return String(self[...i])
-        }
-        */
         return self
     }
 
