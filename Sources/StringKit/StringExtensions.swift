@@ -322,7 +322,17 @@ public extension String {
      Returns base of file name from path with no -nnm version
      returns:    String before "-" if present or before "." if present or self
      */
-    func fileBaseNoVersion() -> String{
+    func fileBaseNoVersion() -> String {
+        if let base = self.fileBase() {
+            if let index = base.lastIndexOf("-") {
+                return String(base[..<index.advance(by: -1, for: base)])
+            } else {
+                return base
+            }
+        }
+        
+        
+        /*
         if let i = self.indexBefore("-") {
             // return file.substring(to: i)
             return String(self[...i])
@@ -331,6 +341,7 @@ public extension String {
             // return file.substring(to: i)
             return String(self[...i])
         }
+        */
         return self
     }
 
