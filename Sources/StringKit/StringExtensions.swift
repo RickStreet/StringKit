@@ -336,12 +336,12 @@ public extension String {
     
     /// Returns file extension
     func fileExtension() -> String? {
-        if let index = self.lastIndexOf(".") {
+        if let index = self.reverseIndexOf(".") {
             return String(self[index...])
         }
         return nil
     }
-    
+
     /// Returns base capitalized and extension lowecased
     func fileCapitalized() -> String {
         if let base = self.fileBase(), let ext = self.fileExtension() {
