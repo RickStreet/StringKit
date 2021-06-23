@@ -365,6 +365,12 @@ public extension String {
         self.filter("_abcdefghijklmnopqrstuvwxyABCDEFGHIJKLMNOPQRSTUVWXYZ".contains)
     }
     
+    
+    var charactersStripped: String {
+        self.filter("0123456789".contains)
+    }
+
+    
     var phoneNumbersOnly: String {
         self.filter("0123456789".contains)
     }
