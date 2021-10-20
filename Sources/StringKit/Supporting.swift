@@ -18,24 +18,24 @@ public let forestGreen = NSColor(red: 0.0/255.0, green: 153.0/255.0, blue: 76.0/
 public let black = NSColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
 
 
-var headerParagraphStyle = NSMutableParagraphStyle()
+public var headerParagraphStyle = NSMutableParagraphStyle()
 
-var normalParagraphStyle = NSMutableParagraphStyle()
+public var normalParagraphStyle = NSMutableParagraphStyle()
 
-var convParagraphStyle = NSMutableParagraphStyle()
+public var convParagraphStyle = NSMutableParagraphStyle()
 
-var titleAttribute = [ NSAttributedString.Key.foregroundColor: navy,
+public var titleAttribute = [ NSAttributedString.Key.foregroundColor: navy,
                       NSAttributedString.Key.font: NSFont(name: "HelveticaNeue-BoldItalic", size: 20.0)!]
 
-var headerAttribute = [ NSAttributedString.Key.foregroundColor: navy,
+public var headerAttribute = [ NSAttributedString.Key.foregroundColor: navy,
                        NSAttributedString.Key.font: NSFont(name: "HelveticaNeue-Italic", size: 12.0)!]
 
-var normalAttribute = [ NSAttributedString.Key.foregroundColor: black,
+public var normalAttribute = [ NSAttributedString.Key.foregroundColor: black,
                         NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 10.0)!]
 /*
 var convAttributes = [ NSAttributedString.Key.foregroundColor: black,
                        NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 10.0)!]
 */
 
-let smallAttribute = [ NSAttributedString.Key.foregroundColor: navy, NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 6.0)!]
+public var smallAttribute = [ NSAttributedString.Key.foregroundColor: navy, NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 6.0)!]
 
