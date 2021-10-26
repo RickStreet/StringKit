@@ -21,9 +21,12 @@ public let forestGreen = NSColor(red: 0.0/255.0, green: 153.0/255.0, blue: 76.0/
 public let black = NSColor.black
 
 public let fontBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 20.0)!
+public let fontLargeBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 25.0)!
 public let fontItalic = NSFont(name: "HelveticaNeue-Italic", size: 10.0)!
 public let fontNormal = NSFont(name: "HelveticaNeue", size: 10.0)!
 public let fontSmall = NSFont(name: "HelveticaNeue", size: 6.0)!
+public let fontLabel = NSFont(name: "Helvetica Neue", size: 20.0)!
+public let fontAxis = NSFont(name: "Helvetica Neue", size: 20.0)!
 
 public var headerParagraphStyle = NSMutableParagraphStyle()
 
@@ -71,3 +74,11 @@ public var smallAttribute = [ NSAttributedString.Key.foregroundColor: navy, NSAt
 public var smallAttribute: [NSAttributedString.Key: Any] = [
     .foregroundColor: black,
     .font: fontSmall]
+
+public var attributeLabel: [NSAttributedString.Key: Any] = [
+    .foregroundColor: navy,
+    .font: fontLabel]
+
+public var attributeAxis: [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontAxis]
