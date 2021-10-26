@@ -17,8 +17,13 @@ public let pink = NSColor(red: 255.0/255.0, green: 231.0/255.0, blue: 235.0/255.
 public let darkRed = NSColor(red: 137.0/255.0, green: 33.0/255.0, blue: 16.0/255.0, alpha: 1.0)
 public let navy = NSColor(red: 4.0/255.0, green: 30.0/255.0, blue: 141.0/255.0, alpha: 1.0)
 public let forestGreen = NSColor(red: 0.0/255.0, green: 153.0/255.0, blue: 76.0/255.0, alpha: 1.0)
-public let black = NSColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+// public let black = NSColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
+public let black = NSColor.black
 
+public let fontBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 20.0)!
+public let fontItalic = NSFont(name: "HelveticaNeue-Italic", size: 10.0)!
+public let fontNormal = NSFont(name: "HelveticaNeue", size: 10.0)!
+public let fontSmall = NSFont(name: "HelveticaNeue", size: 6.0)!
 
 public var headerParagraphStyle = NSMutableParagraphStyle()
 
@@ -26,18 +31,43 @@ public var normalParagraphStyle = NSMutableParagraphStyle()
 
 public var convParagraphStyle = NSMutableParagraphStyle()
 
+/*
 public var titleAttribute = [ NSAttributedString.Key.foregroundColor: navy,
                       NSAttributedString.Key.font: NSFont(name: "HelveticaNeue-BoldItalic", size: 20.0)!]
+*/
 
+public var titleAttribute: [NSAttributedString.Key: Any] = [
+    .foregroundColor: navy,
+    .font: fontBoldItalic]
+
+
+/*
 public var headerAttribute = [ NSAttributedString.Key.foregroundColor: navy,
                        NSAttributedString.Key.font: NSFont(name: "HelveticaNeue-Italic", size: 12.0)!]
+*/
+public var headerAttribute: [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontItalic]
 
+/*
 public var normalAttribute = [ NSAttributedString.Key.foregroundColor: black,
                         NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 10.0)!]
+ */
+
+public var normalAttribute: [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontNormal]
+
+
 /*
 var convAttributes = [ NSAttributedString.Key.foregroundColor: black,
                        NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 10.0)!]
 */
 
+/*
 public var smallAttribute = [ NSAttributedString.Key.foregroundColor: navy, NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 6.0)!]
+*/
 
+public var smallAttribute: [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontSmall]
