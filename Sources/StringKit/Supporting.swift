@@ -28,7 +28,6 @@ public let fontNormal = NSFont(name: "HelveticaNeue", size: 10.0)!
 public let fontSmall = NSFont(name: "HelveticaNeue", size: 6.0)!
 public let fontLabel = NSFont(name: "Helvetica Neue", size: 20.0)!
 public let fontAxis = NSFont(name: "Helvetica Neue", size: 20.0)!
-public let fontSubscript = NSFont(name: "HelveticaNeue", size: 5.0)!
 
 
 public var headerParagraphStyle = NSMutableParagraphStyle()
@@ -86,12 +85,4 @@ public var attributeAxis: [NSAttributedString.Key: Any] = [
     .foregroundColor: black,
     .font: fontAxis]
 
-public var attributeSuperscript: [NSAttributedString.Key: Any] = [
-    .foregroundColor: black,
-    .font: fontSubscript,
-    .baselineOffset: 10]
-
-public var attributeSubscript: [NSAttributedString.Key: Any] = [
-    .foregroundColor: black,
-    .font: fontSubscript,
-    .baselineOffset: -10]
+// use superscriptRange and subscriptRange attrkbuted string function
