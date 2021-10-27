@@ -20,6 +20,7 @@ public let forestGreen = NSColor(red: 0.0/255.0, green: 153.0/255.0, blue: 76.0/
 // public let black = NSColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
 public let black = NSColor.black
 
+
 public let fontBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 20.0)!
 public let fontLargeBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 25.0)!
 public let fontItalic = NSFont(name: "HelveticaNeue-Italic", size: 10.0)!
@@ -27,6 +28,8 @@ public let fontNormal = NSFont(name: "HelveticaNeue", size: 10.0)!
 public let fontSmall = NSFont(name: "HelveticaNeue", size: 6.0)!
 public let fontLabel = NSFont(name: "Helvetica Neue", size: 20.0)!
 public let fontAxis = NSFont(name: "Helvetica Neue", size: 20.0)!
+public let fontSubscript = NSFont(name: "HelveticaNeue", size: 5.0)!
+
 
 public var headerParagraphStyle = NSMutableParagraphStyle()
 
@@ -71,7 +74,7 @@ var convAttributes = [ NSAttributedString.Key.foregroundColor: black,
 public var smallAttribute = [ NSAttributedString.Key.foregroundColor: navy, NSAttributedString.Key.font: NSFont(name: "HelveticaNeue", size: 6.0)!]
 */
 
-public var smallAttribute: [NSAttributedString.Key: Any] = [
+public var attributeSmall: [NSAttributedString.Key: Any] = [
     .foregroundColor: black,
     .font: fontSmall]
 
@@ -82,3 +85,13 @@ public var attributeLabel: [NSAttributedString.Key: Any] = [
 public var attributeAxis: [NSAttributedString.Key: Any] = [
     .foregroundColor: black,
     .font: fontAxis]
+
+public var attributeSuperscript: [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontSubscript,
+    .baselineOffset: 10]
+
+public var attributeSubscript: [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontSubscript,
+    .baselineOffset: -10]
