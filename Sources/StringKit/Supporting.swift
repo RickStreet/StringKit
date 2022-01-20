@@ -4,7 +4,7 @@
 //
 //  Created by Rick Street on 10/20/21.
 //
-
+#if os(OSX)
 import Cocoa
 
 public let lightYellow = NSColor(red: 255.0/255.0, green: 255.0/255.0, blue: 198.0/255.0, alpha: 1.0)
@@ -86,3 +86,4 @@ public var attributeAxis: [NSAttributedString.Key: Any] = [
     .font: fontAxis]
 
 // use superscriptRange and subscriptRange attrkbuted string function
+#endif
