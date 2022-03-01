@@ -85,5 +85,23 @@ public var attributeAxis: [NSAttributedString.Key: Any] = [
     .foregroundColor: black,
     .font: fontAxis]
 
+public var attributeNormalNavy:  [NSAttributedString.Key: Any] = [
+    .foregroundColor: navy,
+    .font: fontNormal]
+
+public var attributeNormal:  [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontNormal]
+
+public var attributeTitle:  [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontBoldItalic]
+
+public var attributeTitleNavy:  [NSAttributedString.Key: Any] = [
+    .foregroundColor: navy,
+    .font: fontBoldItalic]
+
+
+
 // use superscriptRange and subscriptRange attrkbuted string function
 #endif
