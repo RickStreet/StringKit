@@ -21,8 +21,9 @@ public let forestGreen = NSColor(red: 0.0/255.0, green: 153.0/255.0, blue: 76.0/
 public let black = NSColor.black
 
 
-public let fontBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 20.0)!
+public let fontBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 12.0)!
 public let fontLargeBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 25.0)!
+public let fontBoldItalicNormal = NSFont(name: "HelveticaNeue-BoldItalic", size: 10.0)!
 public let fontItalic = NSFont(name: "HelveticaNeue-Italic", size: 10.0)!
 public let fontNormal = NSFont(name: "HelveticaNeue", size: 10.0)!
 public let fontSmall = NSFont(name: "HelveticaNeue", size: 6.0)!
@@ -100,6 +101,11 @@ public var attributeTitle:  [NSAttributedString.Key: Any] = [
 public var attributeTitleNavy:  [NSAttributedString.Key: Any] = [
     .foregroundColor: navy,
     .font: fontBoldItalic]
+
+public var attributeSubtitle:  [NSAttributedString.Key: Any] = [
+    .foregroundColor: black,
+    .font: fontBoldItalicNormal]
+
 
 
 
