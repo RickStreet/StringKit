@@ -108,6 +108,6 @@ public var attributeSubtitle:  [NSAttributedString.Key: Any] = [
 
 
 
+// use superscriptRange and subscriptRange attributed string function
 
-// use superscriptRange and subscriptRange attrkbuted string function
 #endif
