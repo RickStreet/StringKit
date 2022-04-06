@@ -35,6 +35,7 @@ public extension String {
         return count
     }
     
+    // Deprecated
     /**
      Determines starting index of a string in another string
      
@@ -48,7 +49,20 @@ public extension String {
         return self.range(of: target)?.lowerBound
     }
 
+    /**
+     Determines starting index of a string in another string
+     
+     - Parameters:
+        - target:    String to find
+     
+     - returns: starting String index of substring (optional)
+     */
+    func index(of target: String) -> String.Index?
+    {
+        return self.range(of: target)?.lowerBound
+    }
 
+    // Deprecated
     /**
      Determines index before a string in another string
      
@@ -61,7 +75,22 @@ public extension String {
     {
         return self.range(of: target)?.lowerBound.advance(by: -1, for: self)
     }
+ 
+    /**
+     Determines index before a string in another string
+     
+     - Parameters:
+        - target:    String to find
+     
+     - returns: starting String index of substring (optional)
+     */
+    func index(before target: String) -> String.Index?
+    {
+        return self.range(of: target)?.lowerBound.advance(by: -1, for: self)
+    }
+
     
+    // Deprecated
     /**
      Determines index after a string in another string
      
@@ -75,8 +104,21 @@ public extension String {
         return self.range(of: target)?.upperBound
     }
     
+    /**
+     Determines index after a string in another string
+     
+     - Parameters:
+        - target:    String to find
+     
+     - returns: starting String index of substring (optional)
+     */
+    func index(after target: String) -> String.Index?
+    {
+        return self.range(of: target)?.upperBound
+    }
 
     
+    // Deprecated
     /**
      Determines ending index of a string in another string starting from the right
      
@@ -87,10 +129,26 @@ public extension String {
      */
     func reverseIndexOf(_ target: String) -> String.Index?
     {
+        let index = self.range(of: target, options:NSString.CompareOptions.backwards)?.lowerBound
+        return index
+    }
+
+    /**
+     Determines ending index of a string in another string starting from the right
+     
+     - Parameters:
+        - target:    String to find
+     
+     - returns: ending String index of substring (optional) fron right
+     */
+    func index(afterLast target: String) -> String.Index?
+    {
         let index = self.range(of: target, options:NSString.CompareOptions.backwards)?.upperBound
         return index
     }
 
+    
+    // Deprecated, Duplicate
     /**
      Determines ending index of a string in another string
      
@@ -104,6 +162,7 @@ public extension String {
     {
         return self.range(of: target)?.upperBound
     }
+
     
     /**
      Returns String with occurances of a substing replaced by another
@@ -178,6 +237,25 @@ public extension String {
         }
     }
     
+    
+    /**
+     Returns String starting from left to index
+     - Parameters:
+     - _: Index for first char of substring
+     
+     - returns:  substring starting at i through the rest of the string
+     */
+    func left(_ i: Int) -> String {
+        if i <= self.count {
+            let end = self.index(self.startIndex, offsetBy: i)
+
+            return String(self[..<end])
+        } else {
+            return self
+        }
+        
+    }
+
     /**
      Gives a Array of Strings for each word in quotes
      - Parameters:
@@ -207,24 +285,6 @@ public extension String {
         return words
     }
     
-    
-    /**
-     Returns String starting from left to index
-     - Parameters:
-     - _: Index for first char of substring
-     
-     - returns:  substring starting at i through the rest of the string
-     */
-    func left(_ i: Int) -> String {
-        if i <= self.count {
-            let end = self.index(self.startIndex, offsetBy: i)
-
-            return String(self[..<end])
-        } else {
-            return self
-        }
-        
-    }
 
     /**
      Returns substring for integer range
