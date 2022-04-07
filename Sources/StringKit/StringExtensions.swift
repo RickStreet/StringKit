@@ -371,7 +371,7 @@ public extension String {
      returns:    String before "."
      */
     func fileBase() -> String? {
-        if let index = self.reverseIndexOf(".") {
+        if let index = self.index(afterLast: ".") {
             return String(self[..<index.advance(by: -1, for: self)])
         }
         return nil
@@ -384,7 +384,7 @@ public extension String {
      */
     func fileBaseNoVersion() -> String {
         if let base = self.fileBase() {
-            if let index = base.reverseIndexOf("-") {
+            if let index = base.index(afterLast: "-") {
                 return String(base[...index.advance(by: -2, for: base)])
             } else {
                 return base
@@ -396,7 +396,7 @@ public extension String {
     
     /// Returns file extension
     func fileExtension() -> String? {
-        if let index = self.reverseIndexOf(".") {
+        if let index = self.index(afterLast: ".") {
             return String(self[index...])
         }
         return nil
