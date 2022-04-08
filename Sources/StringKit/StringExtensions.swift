@@ -35,20 +35,6 @@ public extension String {
         return count
     }
     
-    // Deprecated
-    /**
-     Determines starting index of a string in another string
-     
-     - Parameters:
-        - target:    String to find
-     
-     - returns: starting String index of substring (optional)
-     */
-    func indexOf(_ target: String) -> String.Index?
-    {
-        return self.range(of: target)?.lowerBound
-    }
-
     /**
      Determines starting index of a string in another string
      
@@ -60,20 +46,6 @@ public extension String {
     func index(of target: String) -> String.Index?
     {
         return self.range(of: target)?.lowerBound
-    }
-
-    // Deprecated
-    /**
-     Determines index before a string in another string
-     
-     - Parameters:
-        - target:    String to find
-     
-     - returns: starting String index of substring (optional)
-     */
-    func indexBefore(_ target: String) -> String.Index?
-    {
-        return self.range(of: target)?.lowerBound.advance(by: -1, for: self)
     }
  
     /**
@@ -89,21 +61,7 @@ public extension String {
         return self.range(of: target)?.lowerBound.advance(by: -1, for: self)
     }
 
-    
-    // Deprecated
-    /**
-     Determines index after a string in another string
-     
-     - Parameters:
-        - target:    String to find
-     
-     - returns: starting String index of substring (optional)
-     */
-    func indexAfter(_ target: String) -> String.Index?
-    {
-        return self.range(of: target)?.upperBound
-    }
-    
+        
     /**
      Determines index after a string in another string
      
@@ -116,23 +74,7 @@ public extension String {
     {
         return self.range(of: target)?.upperBound
     }
-
     
-    // Deprecated
-    /**
-     Determines ending index of a string in another string starting from the right
-     
-     - Parameters:
-        - target:    String to find
-     
-     - returns: ending String index of substring (optional) fron right
-     */
-    func reverseIndexOf(_ target: String) -> String.Index?
-    {
-        let index = self.range(of: target, options:NSString.CompareOptions.backwards)?.lowerBound
-        return index
-    }
-
     /**
      Determines ending index of a string in another string starting from the right
      
@@ -147,23 +89,7 @@ public extension String {
         return index
     }
 
-    
-    // Deprecated, Duplicate
-    /**
-     Determines ending index of a string in another string
-     
-     - Parameters:
-        - target:    String to find
-     
-     - returns: ending index of substring (optional)
-     */
-    
-    func lastIndexOf(_ target: String) -> String.Index?
-    {
-        return self.range(of: target)?.upperBound
-    }
-
-    
+        
     /**
      Returns String with occurances of a substing replaced by another
      
