@@ -26,7 +26,7 @@ public let fontLargeBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 
 public let fontBoldItalicNormal = NSFont(name: "HelveticaNeue-BoldItalic", size: 12.0)!
 public let fontItalic = NSFont(name: "HelveticaNeue-Italic", size: 12.0)!
 public let fontNormal = NSFont(name: "HelveticaNeue", size: 12.0)!
-public let fontSmall = NSFont(name: "HelveticaNeue", size: 6.0)!
+public let fontSmall = NSFont(name: "HelveticaNeue", size: 8.0)!
 public let fontLabel = NSFont(name: "Helvetica Neue", size: 20.0)!
 public let fontAxis = NSFont(name: "Helvetica Neue", size: 20.0)!
 
@@ -89,6 +89,11 @@ public var attributeAxis: [NSAttributedString.Key: Any] = [
 public var attributeNormalNavy:  [NSAttributedString.Key: Any] = [
     .foregroundColor: navy,
     .font: fontNormal]
+
+public var attributeNormalRed:  [NSAttributedString.Key: Any] = [
+    .foregroundColor: navy,
+    .font: fontNormal]
+
 
 public var attributeNormal:  [NSAttributedString.Key: Any] = [
     .foregroundColor: black,
