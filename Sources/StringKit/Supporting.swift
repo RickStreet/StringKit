@@ -23,9 +23,9 @@ public let black = NSColor.black
 
 public let fontBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 12.0)!
 public let fontLargeBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 25.0)!
-public let fontBoldItalicNormal = NSFont(name: "HelveticaNeue-BoldItalic", size: 10.0)!
-public let fontItalic = NSFont(name: "HelveticaNeue-Italic", size: 10.0)!
-public let fontNormal = NSFont(name: "HelveticaNeue", size: 10.0)!
+public let fontBoldItalicNormal = NSFont(name: "HelveticaNeue-BoldItalic", size: 12.0)!
+public let fontItalic = NSFont(name: "HelveticaNeue-Italic", size: 12.0)!
+public let fontNormal = NSFont(name: "HelveticaNeue", size: 12.0)!
 public let fontSmall = NSFont(name: "HelveticaNeue", size: 6.0)!
 public let fontLabel = NSFont(name: "Helvetica Neue", size: 20.0)!
 public let fontAxis = NSFont(name: "Helvetica Neue", size: 20.0)!
