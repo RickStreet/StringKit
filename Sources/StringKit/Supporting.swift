@@ -19,6 +19,7 @@ public let navy = NSColor(red: 4.0/255.0, green: 30.0/255.0, blue: 141.0/255.0, 
 public let forestGreen = NSColor(red: 0.0/255.0, green: 153.0/255.0, blue: 76.0/255.0, alpha: 1.0)
 // public let black = NSColor(red: 0.0/255.0, green: 0.0/255.0, blue: 0.0/255.0, alpha: 1.0)
 public let black = NSColor.black
+public let red = NSColor.red
 
 
 public let fontBoldItalic = NSFont(name: "HelveticaNeue-BoldItalic", size: 12.0)!
@@ -91,7 +92,7 @@ public var attributeNormalNavy:  [NSAttributedString.Key: Any] = [
     .font: fontNormal]
 
 public var attributeNormalRed:  [NSAttributedString.Key: Any] = [
-    .foregroundColor: navy,
+    .foregroundColor: red,
     .font: fontNormal]
 
 
