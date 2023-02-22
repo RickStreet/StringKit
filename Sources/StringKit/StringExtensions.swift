@@ -271,7 +271,10 @@ public extension String {
         return self.trimmingCharacters(in: CharacterSet(charactersIn: "\"\'"))
     }
 
-    
+    func trimIllegal() -> String {
+        return self.trimmingCharacters(in: NSCharacterSet.illegalCharacters)
+    }
+
     /**
      Pads the string from the left
      - parameters:
