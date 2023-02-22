@@ -274,6 +274,12 @@ public extension String {
     func trimNonBase() -> String {
         return self.trimmingCharacters(in: NSCharacterSet.nonBaseCharacters)
     }
+    
+    var stripped: String {
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-=().!_")
+        return self.filter {okayChars.contains($0) }
+    }
+
 
     /**
      Pads the string from the left
