@@ -271,8 +271,8 @@ public extension String {
         return self.trimmingCharacters(in: CharacterSet(charactersIn: "\"\'"))
     }
 
-    func trimIllegal() -> String {
-        return self.trimmingCharacters(in: NSCharacterSet.illegalCharacters)
+    func trimNonBase() -> String {
+        return self.trimmingCharacters(in: NSCharacterSet.nonBaseCharacters)
     }
 
     /**
