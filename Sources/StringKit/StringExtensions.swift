@@ -276,7 +276,7 @@ public extension String {
     }
     
     var stripped: String {
-        let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-=().!_")
+        let okayChars = Set("abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLKMNOPQRSTUVWXYZ1234567890+-=().!_,:!@#$%^&*()[]{};\"\'/\\")
         return self.filter {okayChars.contains($0) }
     }
 
