@@ -2,7 +2,7 @@
 //  StringExtensions.swift
 //  StringKit
 //
-//  Created by Rick Street on 10/20/16.
+//  Created by Rick Street on 2023.04.11.
 //  Copyright © 2020 Rick Street. All rights reserved.
 //
 
