@@ -88,6 +88,21 @@ public extension String {
         let index = self.range(of: target, options:NSString.CompareOptions.backwards)?.upperBound
         return index
     }
+    
+    /**
+     Determines ending index of a string in another string starting from the right
+     
+     - Parameters:
+        - target:    String to find
+     
+     - returns: ending String index of substring (optional) fron right
+     */
+    func index(beforeLast target: String) -> String.Index?
+    {
+        let index = self.range(of: target, options:NSString.CompareOptions.backwards)?.upperBound
+        return index?.advance(by: -2, for: self)
+    }
+
 
         
     /**
