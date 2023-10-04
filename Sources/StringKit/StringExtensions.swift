@@ -227,7 +227,7 @@ public extension String {
         return words
     }
     
-    mutating func stripCarriageReturn() {
+    mutating func stripCarriageReturns() {
         if self.contains("\r") && self.contains("\n") {
             // Windows file
             self = self.replace("\r", with: "")
