@@ -227,6 +227,25 @@ public extension String {
         return words
     }
     
+    mutating func stripCarriageReturn() {
+        if self.contains("\r") && self.contains("\n") {
+            // Windows file
+            self = self.replace("\r", with: "")
+            print("Widows File")
+        } else if self.contains("\n") && !self.contains("\r") {
+            // Mac File
+            print("Mac file")
+        } else if !self.contains("\n") && self.contains("\r") {
+            // CR File
+            print("CR seperator file")
+            self = self.replace("\r", with: "\n")
+        } else if self.contains("\r\n") {
+            // CR File
+            print("CR combined file")
+            self = self.replace("\r\n", with: "\n")
+        }
+    }
+    
 
     /**
      Returns substring for integer range
