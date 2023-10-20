@@ -285,7 +285,8 @@ public extension String {
      returns:    String with whitespace characters removed form both ends
      */
     func trim() -> String {
-        return self.trimmingCharacters(in: NSCharacterSet.whitespaces)
+        return self.trimmingCharacters(in: ["\n", "\r", "\t", " "])
+        // return self.trimmingCharacters(in: NSCharacterSet.whitespaces)
     }
     
     /**
