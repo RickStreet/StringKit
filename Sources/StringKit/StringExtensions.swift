@@ -555,6 +555,14 @@ public extension String {
         }
     }
 
+    /// Encodes String to UTF8
+    /// - Returns: UTF8 String
+    func utf8Encode()-> String {
+        let messageData = self.data(using: .nonLossyASCII)
+        let text = String(data: messageData!, encoding: .utf8) ?? ""
+        return text
+    }
+
     
     /**
      Array of vowels
