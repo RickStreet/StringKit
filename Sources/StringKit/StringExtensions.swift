@@ -316,6 +316,20 @@ public extension String {
         return self.filter {okayChars.contains($0) }
     }
 
+    func stripNonAsciiCharacters() -> String {
+        func isAscii(_ character: Character) -> Bool {
+            if let asciiValue = character.asciiValue {
+                if Int(asciiValue) < 128 {
+                    return true
+                } else {
+                    return false
+                }
+            } else {
+                return false
+            }
+        }
+        return String(self.filter {isAscii($0)})
+    }
 
     /**
      Pads the string from the left
