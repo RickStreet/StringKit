@@ -103,9 +103,52 @@ public extension String {
         let index = self.range(of: target, options:NSString.CompareOptions.backwards)?.upperBound
         return index?.advance(by: -2, for: self)
     }
+    
+    func substring(range: Range<Int>) -> Substring? {
+        if range.lowerBound >= count || range.upperBound >= count || range.lowerBound < 0 || range.upperBound < 0 {
+            return nil
+        }
+        let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let endIndex = self.index(self.startIndex, offsetBy: range.upperBound - 1)
+        return self[startIndex...endIndex]
+    }
 
+    func substring(range: ClosedRange<Int>) -> Substring? {
+        if range.lowerBound >= count || range.upperBound >= count || range.lowerBound < 0 || range.upperBound < 0 {
+            return nil
+        }
+        let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let endIndex = self.index(self.startIndex, offsetBy: range.upperBound)
+        return self[startIndex...endIndex]
+    }
 
-        
+    func substring(range: PartialRangeFrom<Int>) -> Substring? {
+        if range.lowerBound >= count || range.lowerBound < 0 {
+            return nil
+        }
+        let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let endIndex = self.index(before: self.endIndex)
+        return self[startIndex...endIndex]
+    }
+
+    func substring(range: PartialRangeThrough<Int>) -> Substring? {
+        if range.upperBound < 0 || range.upperBound >= count {
+            return nil
+        }
+        let startIndex = self.startIndex
+        let endIndex = self.index(self.startIndex, offsetBy: range.upperBound)
+        return self[startIndex...endIndex]
+    }
+
+    func substring(range: PartialRangeUpTo<Int>) -> Substring? {
+        if range.upperBound < 0 || range.upperBound >= count {
+            return nil
+        }
+        let startIndex = self.startIndex
+        let endIndex = self.index(self.startIndex, offsetBy: range.upperBound - 1)
+        return self[startIndex...endIndex]
+    }
+    
     /**
      Returns String with occurances of a substing replaced by another
      
