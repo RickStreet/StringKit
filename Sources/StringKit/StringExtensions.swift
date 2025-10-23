@@ -394,6 +394,31 @@ public extension String {
        return "".padding(toLength:paddedLength, withPad:rightPadded, startingAt:count % paddedLength)
     }
     
+    /// Create full description for tags
+    /// - Parameters:
+    ///   - name: Tag Name
+    ///   - description: Tag Desdription
+    ///   - units: tag engineering limits
+    /// - Returns: description with name, description, and units
+    func fullTagDescription(name: String, description: String, units: String) -> String {
+        var string = ""
+        if name.isEmpty {
+            string = description
+        } else {
+            print("have name")
+            if description.isEmpty {
+                string = name
+            } else {
+                string = "\(name), \(description)"
+            }
+        }
+        if !units.isEmpty {
+            string += ", \(units)"
+        }
+        return string
+    }
+
+    
     /**
      Returns base of file name from path
      returns:    String before "."
