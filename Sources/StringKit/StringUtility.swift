@@ -6,41 +6,45 @@
 //
 import Foundation
 
-/// Create full description for tags
-/// - Parameters:
-///   - name: Tag Name
-///   - description: Tag Desdription
-///   - units: tag engineering limits
-/// - Returns: description with name, description, and units
-public func fullTagDescription(name: String, description: String, units: String) -> String {
-    var string = ""
-    if name.isEmpty {
-        string = description
-    } else {
-        if description.isEmpty {
-            string = name
+public class StringUtility {
+    /// Create full description for tags
+    /// - Parameters:
+    ///   - name: Tag Name
+    ///   - description: Tag Desdription
+    ///   - units: tag engineering limits
+    /// - Returns: description with name, description, and units
+    public static func fullTagDescription(name: String, description: String, units: String) -> String {
+        var string = ""
+        if name.isEmpty {
+            string = description
         } else {
-            string = "\(name), \(description)"
+            if description.isEmpty {
+                string = name
+            } else {
+                string = "\(name), \(description)"
+            }
+        }
+        if !units.isEmpty {
+            string += ", \(units)"
+        }
+        return string
+    }
+
+    /// Short tag description
+    /// - Parameters:
+    ///   - name: Tag Name
+    ///   - Description: Tag Description
+    /// - Returns: tag name or dexcription of there is no name
+    public static func shortTagDescription(name: String, Description: String) -> String {
+        if !name.isEmpty {
+            return name
+        } else {
+            return Description
         }
     }
-    if !units.isEmpty {
-        string += ", \(units)"
-    }
-    return string
+
 }
 
-/// Short tag description
-/// - Parameters:
-///   - name: Tag Name
-///   - Description: Tag Description
-/// - Returns: tag name or dexcription of there is no name
-public func shortTagDescription(name: String, Description: String) -> String {
-    if !name.isEmpty {
-        return name
-    } else {
-        return Description
-    }
-}
 
 // Force Change
 
