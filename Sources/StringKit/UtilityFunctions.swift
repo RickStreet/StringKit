@@ -4,6 +4,7 @@
 //
 //  Created by Rick Street on 10/23/25.
 //
+import Foundation
 
 /// Create full description for tags
 /// - Parameters:
