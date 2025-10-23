@@ -405,7 +405,6 @@ public extension String {
         if name.isEmpty {
             string = description
         } else {
-            print("have name")
             if description.isEmpty {
                 string = name
             } else {
@@ -417,6 +416,20 @@ public extension String {
         }
         return string
     }
+    
+    /// Short tag description
+    /// - Parameters:
+    ///   - name: Tag Name
+    ///   - Description: Tag Description
+    /// - Returns: tag name or dexcription of there is no name
+    func shortTagDescription(name: String, Description: String) -> String {
+        if !name.isEmpty {
+            return name
+        } else {
+            return Description
+        }
+    }
+
 
     
     /**
