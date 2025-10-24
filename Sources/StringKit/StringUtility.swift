@@ -35,11 +35,24 @@ public class StringUtility {
     ///   - name: Tag Name
     ///   - Description: Tag Description
     /// - Returns: tag name or dexcription of there is no name
-    public static func shortTagDescription(name: String, Description: String) -> String {
+    public static func shortTagName(name: String, Description: String) -> String {
         if !name.isEmpty {
             return name
         } else {
             return Description
+        }
+    }
+
+    /// Short tag description
+    /// - Parameters:
+    ///   - name: Tag Name
+    ///   - Description: Tag Description
+    /// - Returns: tag name or dexcription of there is no name
+    public static func shortTagDescription(name: String, Description: String) -> String {
+        if !Description.isEmpty {
+            return Description
+        } else {
+            return name
         }
     }
 
