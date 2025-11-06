@@ -444,7 +444,7 @@ public extension String {
     ///   - description: Tag Desdription
     ///   - units: tag engineering limits
     /// - Returns: description with name, description, and units
-    func fullTagDescription(name: String, description: String, units: String) -> String {
+    func fullTagTitle(name: String, description: String, units: String) -> String {
         var string = ""
         if name.isEmpty {
             string = description
@@ -466,7 +466,7 @@ public extension String {
     ///   - name: Tag Name
     ///   - Description: Tag Description
     /// - Returns: tag name or dexcription of there is no name
-    func shortTagDescription(name: String, Description: String) -> String {
+    func shortTagTitle(name: String, Description: String) -> String {
         if !name.isEmpty {
             return name
         } else {
